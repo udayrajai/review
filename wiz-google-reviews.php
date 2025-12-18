@@ -24,7 +24,7 @@ define('WIZ_GR_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('WIZ_GR_PLUGIN_FILE', __FILE__);
 
 // IMPORTANT: Add your Google Places API Key here
-define('WIZ_GR_API_KEY', 'AIzaSyBc1BcxkqvOqNuPMQ3ecHWPswrdxok2IXM');
+define('WIZ_GR_API_KEY', 'ADD YOU API KEY HERE);
 
 /**
  * Main Plugin Class
