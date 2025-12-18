@@ -1,0 +1,131 @@
+/**
+ * Admin Styles
+ * 
+ * File: assets/css/admin.css
+ */
+
+.wiz-gr-admin {
+    max-width: 1200px;
+}
+
+.wiz-gr-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .wiz-gr-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.wiz-gr-card {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.wiz-gr-card h2,
+.wiz-gr-card h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.wiz-gr-shortcode {
+    display: inline-block;
+    background: #f0f0f1;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: all;
+}
+
+.wiz-gr-shortcode:hover {
+    background: #e0e0e1;
+}
+
+/* Stats */
+.wiz-gr-stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.wiz-gr-stat:last-child {
+    border-bottom: none;
+}
+
+.wiz-gr-stat-label {
+    font-weight: 500;
+    color: #50575e;
+}
+
+.wiz-gr-stat-value {
+    font-weight: 600;
+    color: #2271b1;
+}
+
+/* Limits list */
+.wiz-gr-limits {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.wiz-gr-limits li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f1;
+}
+
+.wiz-gr-limits li:last-child {
+    border-bottom: none;
+}
+
+/* Help card */
+.wiz-gr-help ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.wiz-gr-help li {
+    padding: 5px 0;
+}
+
+.wiz-gr-help a {
+    text-decoration: none;
+    color: #2271b1;
+}
+
+.wiz-gr-help a:hover {
+    text-decoration: underline;
+}
+
+/* Form improvements */
+.wiz-gr-card .form-table th {
+    padding-left: 0;
+}
+
+.wiz-gr-card .form-table td {
+    padding-right: 0;
+}
+
+.wiz-gr-card .description {
+    color: #646970;
+    font-size: 13px;
+}
+
+/* Button states */
+button[disabled],
+.button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

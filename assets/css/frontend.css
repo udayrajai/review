@@ -1,0 +1,388 @@
+/**
+ * Frontend Styles - All Layouts & Themes
+ * 
+ * File: assets/css/frontend.css
+ */
+
+/* ============================================
+   BASE STYLES
+============================================ */
+.wiz-gr-reviews {
+    margin: 20px 0;
+    position: relative;
+}
+
+/* ============================================
+   GRID LAYOUT
+============================================ */
+.wiz-gr-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.wiz-gr-grid.wiz-gr-cols-2 {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.wiz-gr-grid.wiz-gr-cols-3 {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.wiz-gr-grid.wiz-gr-cols-4 {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+@media (max-width: 768px) {
+    .wiz-gr-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ============================================
+   MASONRY LAYOUT
+============================================ */
+.wiz-gr-masonry {
+    column-gap: 20px;
+}
+
+.wiz-gr-masonry.wiz-gr-cols-2 {
+    column-count: 2;
+}
+
+.wiz-gr-masonry.wiz-gr-cols-3 {
+    column-count: 3;
+}
+
+.wiz-gr-masonry.wiz-gr-cols-4 {
+    column-count: 4;
+}
+
+.wiz-gr-masonry-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .wiz-gr-masonry {
+        column-count: 1 !important;
+    }
+}
+
+/* ============================================
+   LIST LAYOUT
+============================================ */
+.wiz-gr-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wiz-gr-list-item {
+    width: 100%;
+}
+
+/* ============================================
+   SLIDER LAYOUT
+============================================ */
+.wiz-gr-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding: 0 50px;
+}
+
+.wiz-gr-slider {
+    display: flex;
+    transition: transform 0.3s ease;
+    gap: 20px;
+}
+
+.wiz-gr-slide {
+    min-width: calc(33.333% - 14px);
+    flex-shrink: 0;
+}
+
+@media (max-width: 968px) {
+    .wiz-gr-slide {
+        min-width: calc(50% - 10px);
+    }
+}
+
+@media (max-width: 640px) {
+    .wiz-gr-slide {
+        min-width: 100%;
+    }
+    .wiz-gr-slider-wrapper {
+        padding: 0 40px;
+    }
+}
+
+.wiz-gr-prev,
+.wiz-gr-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.wiz-gr-prev:hover,
+.wiz-gr-next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.wiz-gr-prev {
+    left: 0;
+}
+
+.wiz-gr-next {
+    right: 0;
+}
+
+.wiz-gr-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.wiz-gr-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.wiz-gr-dot.active {
+    background: #3b82f6;
+}
+
+/* ============================================
+   REVIEW CARD - LIGHT THEME (DEFAULT)
+============================================ */
+.wiz-gr-review-card {
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.wiz-gr-review-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   DARK THEME
+============================================ */
+.wiz-gr-theme-dark .wiz-gr-review-card {
+    background: #1a1a2e;
+    border: 1px solid #2d2d44;
+    color: #e5e7eb;
+}
+
+.wiz-gr-theme-dark .wiz-gr-review-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.wiz-gr-theme-dark .wiz-gr-author-name {
+    color: #f3f4f6 !important;
+}
+
+.wiz-gr-theme-dark .wiz-gr-review-time {
+    color: #9ca3af;
+}
+
+.wiz-gr-theme-dark .wiz-gr-review-text {
+    color: #d1d5db;
+}
+
+.wiz-gr-theme-dark .wiz-gr-star-empty {
+    color: #4b5563;
+}
+
+/* ============================================
+   REVIEW HEADER
+============================================ */
+.wiz-gr-review-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+    position: relative;
+}
+
+.wiz-gr-review-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.wiz-gr-avatar-placeholder {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.wiz-gr-review-author {
+    flex: 1;
+    min-width: 0;
+}
+
+.wiz-gr-author-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #24292e;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+a.wiz-gr-author-name:hover {
+    color: #0366d6;
+    text-decoration: underline;
+}
+
+.wiz-gr-review-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.wiz-gr-rating {
+    display: flex;
+    gap: 2px;
+}
+
+.wiz-gr-star {
+    font-size: 16px;
+    line-height: 1;
+}
+
+.wiz-gr-star-filled {
+    color: #ffa500;
+}
+
+.wiz-gr-star-empty {
+    color: #d1d5db;
+}
+
+.wiz-gr-review-time {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.wiz-gr-google-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.8;
+}
+
+/* ============================================
+   REVIEW TEXT
+============================================ */
+.wiz-gr-review-text {
+    color: #3c4043;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.wiz-gr-review-text p {
+    margin: 0;
+}
+
+/* ============================================
+   NO REVIEWS MESSAGE
+============================================ */
+.wiz-gr-no-reviews {
+    background: #f8f9fa;
+    border: 2px dashed #e1e4e8;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.wiz-gr-theme-dark .wiz-gr-no-reviews {
+    background: #1a1a2e;
+    border-color: #2d2d44;
+    color: #e5e7eb;
+}
+
+.wiz-gr-no-reviews p {
+    margin: 0 0 15px 0;
+    color: #6b7280;
+}
+
+.wiz-gr-theme-dark .wiz-gr-no-reviews p {
+    color: #9ca3af;
+}
+
+.wiz-gr-no-reviews p:last-child {
+    margin-bottom: 0;
+}
+
+.wiz-gr-no-reviews .button {
+    background: #3b82f6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.wiz-gr-no-reviews .button:hover {
+    background: #2563eb;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+============================================ */
+@media (max-width: 480px) {
+    .wiz-gr-review-card {
+        padding: 15px;
+    }
+    
+    .wiz-gr-review-avatar {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .wiz-gr-author-name {
+        font-size: 14px;
+    }
+    
+    .wiz-gr-review-text {
+        font-size: 13px;
+    }
+}
