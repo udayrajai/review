@@ -91,7 +91,7 @@ class Wiz_GR_Admin {
      */
     public function handle_fetch_reviews() {
         // Verify nonce
-        if (!isset($_POST['wiz_gr_nonce']) || !wp_verify_nonce($_POST['wiz_gr_nonce'], 'wiz_gr_fetch_reviews')) {
+        if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'wiz_gr_fetch_reviews')) {
             wp_die(__('Security check failed.', 'wiz-google-reviews'));
         }
         

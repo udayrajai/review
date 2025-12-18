@@ -51,10 +51,7 @@ class Wiz_GR_Widget_Config {
         
         wp_localize_script('wiz-gr-config', 'wizGR', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
-//            'nonce' => wp_create_nonce('wiz_gr_ajax'),
-            'ajax_nonce'    => wp_create_nonce( 'wiz_gr_ajax_nonce' ),
-            'connect_nonce' => wp_create_nonce( 'wiz_gr_connect_business' ),
-            'adminPostUrl' => admin_url( 'admin-post.php' ),
+            'nonce' => wp_create_nonce('wiz_gr_ajax'),
         ));
     }
     

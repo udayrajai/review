@@ -40,7 +40,7 @@ class Wiz_GR_OAuth {
      */
     public function handle_connect() {
         // Verify nonce
-        if (!isset($_POST['wiz_gr_nonce']) || !wp_verify_nonce($_POST['wiz_gr_nonce'], 'wiz_gr_connect_google')) {
+        if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'wiz_gr_connect_google')) {
             wp_die(__('Security check failed.', 'wiz-google-reviews'));
         }
         
@@ -62,7 +62,7 @@ class Wiz_GR_OAuth {
      */
     public function handle_disconnect() {
         // Verify nonce
-        if (!isset($_POST['wiz_gr_nonce']) || !wp_verify_nonce($_POST['wiz_gr_nonce'], 'wiz_gr_disconnect_google')) {
+        if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'wiz_gr_disconnect_google')) {
             wp_die(__('Security check failed.', 'wiz-google-reviews'));
         }
         

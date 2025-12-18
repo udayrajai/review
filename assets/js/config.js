@@ -51,7 +51,7 @@
                 type: 'POST',
                 data: {
                     action: 'wiz_gr_search_business',
-                    nonce: wizGR.ajax_nonce,
+                    nonce: wizGR.nonce,
                     query: query
                 },
                 success: function(response) {
@@ -85,12 +85,11 @@
             });
             
             html += `
-                <form method="post" action="${wizGR.adminPostUrl}" id="select-business-form">
+                <form method="post" action="${wizGR.ajaxurl.replace('admin-ajax.php', 'admin-post.php')}" id="select-business-form">
                     <input type="hidden" name="action" value="wiz_gr_save_business">
-                    <input type="hidden" name="wiz_gr_nonce" value="${wizGR.connect_nonce}">
+                    <input type="hidden" name="_wpnonce" value="">
                     <input type="hidden" name="place_id" id="selected-place-id">
                     <input type="hidden" name="business_name" id="selected-business-name">
-
                     <button type="submit" class="button button-primary" id="confirm-business" disabled style="margin-top: 20px;">
                         Connect This Business
                     </button>
@@ -100,11 +99,11 @@
             $results.html(html);
             
             // Add nonce to form
-//            $.post(wizGR.ajaxurl, {
-//                action: 'wiz_gr_get_nonce'
-//            }, function(nonce) {
-//                $('input[name="wiz_gr_nonce"]').val(wizGR.nonce);
-//            });
+            $.post(wizGR.ajaxurl, {
+                action: 'wiz_gr_get_nonce'
+            }, function(nonce) {
+                $('input[name="_wpnonce"]').val(wizGR.nonce);
+            });
             
             // Handle business selection
             $('.business-result-item').on('click', function() {
